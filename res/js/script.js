@@ -1,13 +1,13 @@
 // ammount to add on each button press
 const confettiCount = 200
-const sequinCount = 200
+const sequinCount = 150
 
 // "physics" variables
-const gravityConfetti = 0.2
-const gravitySequins = 0.45
+const gravityConfetti = 0.1
+const gravitySequins = 0.15
 const dragConfetti = 0.015
 const dragSequins = 0.005
-const terminalVelocity = 3.25
+const terminalVelocity = 9.25
 
 // init other global elements
 const button = document.getElementById('button')
@@ -28,7 +28,7 @@ const colors = [
   { front : '#ff0000', back: '#66ff00' }, // Red, Green
   { front : '#0000ff', back: '#ffff00' }, // Blue, Yellow
   { front : '#ffff00', back: '#0000ff' }, // Yellow, Blue
-  { front : '#66ff00', back: '#ff0000' } // Green, Red
+  { front : '#66ff00', back: '#ff0000' }, // Green, Red
   { front : '#66ff00', back: '#0000ff' }  // Green, Blue
 ]
 
@@ -229,16 +229,16 @@ document.body.onkeyup = (e) => {
 }
 
 // Set up button text transition timings on page load
-textElements = button.querySelectorAll('.button-text')
-textElements.forEach((element) => {
-  characters = element.innerText.split('')
-  let characterHTML = ''
-  characters.forEach((letter, index) => {
-    characterHTML += `<span class="char${index}" style="--d:${index * 30}ms; --dr:${(characters.length - index - 1) * 30}ms;">${letter}</span>`
-  })
-  element.innerHTML = characterHTML
-})
+// textElements = button.querySelectorAll('.button-text')
+// textElements.forEach((element) => {
+//   characters = element.innerText.split('')
+//   let characterHTML = ''
+//   characters.forEach((letter, index) => {
+//     characterHTML += `<span class="char${index}" style="--d:${index * 30}ms; --dr:${(characters.length - index - 1) * 30}ms;">${letter}</span>`
+//   })
+//   element.innerHTML = characterHTML
+// })
 
 // kick off the render loop
-window.initBurst()
+// window.initBurst()
 render()

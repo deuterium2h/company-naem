@@ -1,4 +1,4 @@
-@keyframes loading {
+/*@keyframes loading {
   0% {
     cy: 10;
   }
@@ -8,7 +8,7 @@
   50% {
     cy: 10;
   }
-}
+}*/
 
 body, html {
   height: 100%;
@@ -19,9 +19,7 @@ body, html {
 }
 
 .bg {
-  /* The image used */
-  background-image: url(../img/background.png);
-
+  background-image: url(../img/background1.png);
   /* Full height */
   height: 100%;
 

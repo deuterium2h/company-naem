@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="./res/css/style.css">
 
 </head>
-<body class="bg">
-<!-- <canvas id="canvas"></canvas> -->
+<body id="badi" class="bg bg-img1">
+<canvas id="canvas"></canvas>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -17,23 +17,26 @@
   <input id="button"
         class="ready press"
         type="image"
-        src="./res/img/off.png"
+        src="./res/img/on.png"
         style="position:right;width:500px;height:500px;"
-        onclick="setTimeout(myTimer, 0);start();"/>
+        onclick="setTimeout(myTimer, 0);clickButton();"/>
 
   <script type="text/javascript">
+
     function resetImage() {
-      document.getElementById("button").src = "./res/img/off.png";
+      document.getElementById("button").src = "./res/img/on.png";
+      document.getElementById("badi").style.backgroundImage = "url(./res/img/background1.png)";
     }
     function myTimer() {
-      document.getElementById("button").src = "./res/img/on.png";
+      document.getElementById("button").src = "./res/img/off.png";
+      document.getElementById("badi").style.backgroundImage = "url(./res/img/background2.png)";
       setTimeout(function() {
          resetImage();
-      }, 7500)
+      }, 4750)
     }
   </script>
   <script src="./res/js/script.js"></script>
-  <script src="./res/js/confetti.js"></script>
+  <!-- <script src="./res/js/confetti.js"></script>
   <script type="text/javascript">
     const start = () => {
       confetti.start();
@@ -41,6 +44,6 @@
         confetti.stop();
       }, 8000);
     };
-  </script>
+  </script> -->
 </body>
 </html>
