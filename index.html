@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="./res/css/style.css">
 
 </head>
-<body id="badi" class="bg bg-img1">
+<body id="badi" class="bg bg-img1" onclick="changeBg();">
 <canvas id="canvas"></canvas>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -19,21 +19,48 @@
         type="image"
         src="./res/img/on.png"
         style="position:right;width:500px;height:500px;"
-        onclick="setTimeout(myTimer, 0);clickButton();"/>
+        onclick="clickButton();"/>
 
   <script type="text/javascript">
 
-    function resetImage() {
-      document.getElementById("button").src = "./res/img/on.png";
-      document.getElementById("badi").style.backgroundImage = "url(./res/img/background1.png)";
+    var idx, bgs, btns;
+    idx = 1;
+
+    function updateIdx () {
+
+      if ( idx == 0 ) {
+        idx = 1;
+      }
+      else {
+        idx = 0;
+      }
     }
-    function myTimer() {
-      document.getElementById("button").src = "./res/img/off.png";
-      document.getElementById("badi").style.backgroundImage = "url(./res/img/background2.png)";
-      setTimeout(function() {
-         resetImage();
-      }, 4750)
+
+    bgs = [
+      "url(./res/img/background1.png)",
+      "url(./res/img/background2.png)"
+    ];
+    btns = [
+      "./res/img/on.png",
+      "./res/img/off.png"
+    ];
+
+
+    function changeBg() {
+      document.getElementById("badi").style.backgroundImage = bgs[idx];
+      document.getElementById("button").src = btns[idx];
+      updateIdx();
     }
+
+    // function resetImage() {
+    //   document.getElementById("button").src = "./res/img/on.png";
+    // }
+    // function myTimer() {
+    //   document.getElementById("button").src = "./res/img/off.png";
+    //   setTimeout(function() {
+    //      resetImage();
+    //   }, 4750)
+    // }
   </script>
   <script src="./res/js/script.js"></script>
   <!-- <script src="./res/js/confetti.js"></script>

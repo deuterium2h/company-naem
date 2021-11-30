@@ -25,9 +25,9 @@ let sequins = []
 
 // colors, back side is darker for confetti flipping
 const colors = [
-  { front : '#ff0000', back: '#66ff00' }, // Red, Green
+  { front : '#ff0000', back: '#ffffff' }, // Red, Green
   { front : '#0000ff', back: '#ffff00' }, // Blue, Yellow
-  { front : '#ffff00', back: '#0000ff' }, // Yellow, Blue
+  { front : '#ffff00', back: '#ffffff' }, // Yellow, Blue
   { front : '#66ff00', back: '#ff0000' }, // Green, Red
   { front : '#66ff00', back: '#0000ff' }  // Green, Blue
 ]
