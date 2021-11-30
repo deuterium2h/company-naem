@@ -14,6 +14,10 @@ body, html {
   height: 100%;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .bg {
   /* The image used */
   background-image: url(../img/background.png);

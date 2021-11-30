@@ -1,6 +1,6 @@
 var confetti = {
-    maxCount: 150,      //set max confetti count
-    speed: 2,           //set the particle animation speed
+    maxCount: 250,      //set max confetti count
+    speed: 15,          //set the particle animation speed
     frameInterval: 15,  //the confetti animation frame interval in milliseconds
     alpha: 1.0,         //the alpha opacity of the confetti (between 0 and 1, where 1 is opaque and 0 is invisible)
     gradient: false,    //whether to use gradients for the confetti particles
@@ -168,10 +168,10 @@ var confetti = {
         for (var i = 0; i < particles.length; i++) {
             particle = particles[i];
             context.beginPath();
-            context.lineWidth = particle.diameter;
-            x2 = particle.x + particle.tilt;
-            x = x2 + particle.diameter / 2;
-            y2 = particle.y + particle.tilt + particle.diameter / 2;
+            context.lineWidth = (particle.diameter) * 3;
+            x2 = (particle.x + particle.tilt) * 1;
+            x = (x2 + particle.diameter / 2) * 1;
+            y2 = (particle.y + particle.tilt + particle.diameter / 2) * 1;
             if (confetti.gradient) {
                 var gradient = context.createLinearGradient(x, particle.y, x2, y2);
                 gradient.addColorStop("0", particle.color);

@@ -8,7 +8,7 @@
 
 </head>
 <body class="bg">
-<canvas id="canvas"></canvas>
+<!-- <canvas id="canvas"></canvas> -->
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -19,7 +19,7 @@
         type="image"
         src="./res/img/off.png"
         style="position:right;width:500px;height:500px;"
-        onclick="setTimeout(myTimer, 0);clickButton();"/>
+        onclick="setTimeout(myTimer, 0);start();"/>
 
   <script type="text/javascript">
     function resetImage() {
@@ -33,21 +33,14 @@
     }
   </script>
   <script src="./res/js/script.js"></script>
-<!--   <script src="./res/js/confetti.js"></script>
+  <script src="./res/js/confetti.js"></script>
   <script type="text/javascript">
     const start = () => {
-      setTimeout(function() {
-        confetti.start();
-      }, 0);
-    };
-
-    const stop = () => {
+      confetti.start();
       setTimeout(function() {
         confetti.stop();
-      }, 0);
+      }, 8000);
     };
-    start();
-    // stop();
-  </script> -->
+  </script>
 </body>
 </html>
