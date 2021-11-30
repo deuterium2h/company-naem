@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Shell Day Cinema 2021</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./res/css/style.css">
+
+</head>
+<body class="bg">
+<canvas id="canvas"></canvas>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input id="button"
+        class="ready press"
+        type="image"
+        src="./res/img/off.png"
+        style="position:right;width:500px;height:500px;"
+        onclick="setTimeout(myTimer, 0);clickButton();"/>
+
+  <script type="text/javascript">
+    function resetImage() {
+      document.getElementById("button").src = "./res/img/off.png";
+    }
+    function myTimer() {
+      document.getElementById("button").src = "./res/img/on.png";
+      setTimeout(function() {
+         resetImage();
+      }, 7500)
+    }
+  </script>
+  <script src="./res/js/script.js"></script>
+<!--   <script src="./res/js/confetti.js"></script>
+  <script type="text/javascript">
+    const start = () => {
+      setTimeout(function() {
+        confetti.start();
+      }, 0);
+    };
+
+    const stop = () => {
+      setTimeout(function() {
+        confetti.stop();
+      }, 0);
+    };
+    start();
+    // stop();
+  </script> -->
+</body>
+</html>
