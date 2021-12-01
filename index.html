@@ -7,32 +7,40 @@
 <link rel="stylesheet" href="./res/css/style.css">
 
 </head>
-<body id="badi" class="bg" onclick="changeBg();">
-<!-- <canvas id="canvas"></canvas> -->
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input id="button"
-        class="ready press"
-        type="image"
-        src="./res/img/off.png"
-        style="position:right;width:500px;height:500px;"
-        onclick="start();"/>
-
+<body><!--  onclick="resetBgBtn();"> -->
+  <div style="height: 594px; width: 100%; background-color: transparent; float: left;"
+       onclick="resetBgBtn();"></div>
+  <div id="badi" class="bg"> <!-- onclick="changeBg();"> -->
+   
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input id="button"
+          class="ready press"
+          type="image"
+          src="./res/img/on.png"
+          style="position:right;width:750px;height:750px;"
+          onclick="start();changeBtn();"/>
+ </div>
   <script type="text/javascript">
 
-    var idx, bgs, btns;
-    idx = 1;
+    var btnIdx, bgIdx, bgs, btns;
+    btnIdx = 1;
+    bgIdx = 1;
 
-    function updateIdx () {
+    function resetBgBtn() {
+      document.getElementById("badi").style.backgroundImage = "url(./res/img/background1.png)";
+      document.getElementById("button").src = "./res/img/on.png";
+    }
 
-      if ( idx == 0 ) {
-        idx = 1;
+    function updateBtnIdx () {
+
+      if ( btnIdx == 0 ) {
+        btnIdx = 1;
       }
       else {
-        idx = 0;
+        btnIdx = 0;
       }
     }
 
@@ -42,17 +50,23 @@
     ];
     btns = [
       "./res/img/on.png",
-      "./res/img/off.png"
+      "./res/img/off1.png"
     ];
 
-
     function changeBg() {
-      document.getElementById("badi").style.backgroundImage = bgs[idx];
-      document.getElementById("button").src = btns[idx];
-      updateIdx();
+      // Timer for changing background and button
+      setTimeout(function() {
+        document.getElementById("badi").style.backgroundImage = "url(./res/img/background2.png)";
+        document.getElementById("button").src = "./res/img/off2.png";
+      }, 4500);
+    }
+
+    function changeBtn() {
+      document.getElementById("button").src = "./res/img/off1.png";
+      updateBtnIdx();
+      changeBg();
     }
   </script>
-  <!-- <script src="./res/js/script.js"></script> -->
   <script src="./res/js/confetti.js"></script>
   <script type="text/javascript">
     const start = () => {
